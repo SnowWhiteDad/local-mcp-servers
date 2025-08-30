@@ -1,15 +1,15 @@
 # Local MCP Connections
 
-A comprehensive visualization of Model Context Protocol (MCP) connection flow diagrams demonstrating different communication patterns and security models for local MCP server implementations.
+A visualisation of Model Context Protocol (MCP) connection flow diagrams demonstrating different communication patterns and security models for local MCP server implementations.
 
 ## 🎯 Overview
 
-This project provides interactive diagrams and explanations of various MCP (Model Context Protocol) connection patterns, focusing on:
+This project provides illustrations of various local MCP (Model Context Protocol) connection patterns, focusing on:
 
 - **Stdio-based communication** for maximum security
-- **Network-based discovery** for distributed systems
-- **Security considerations** and best practices
-- **Docker-based deployments** with different access patterns
+- **Network-based discovery** for remote AI Agents
+- **Endpoint Security considerations** and best practices
+- **Docker-based deployments** with different discovery patterns
 
 ## 📊 Diagram Sections
 
@@ -31,20 +31,18 @@ This project provides interactive diagrams and explanations of various MCP (Mode
 ### 4. Docker MCP - Non-Discoverable
 - **File**: `MCP-External-resource-non-discoverable.svg`
 - **Description**: Docker-based MCP servers with restricted network access
-- **Key Features**: Controlled access, manual configuration, security balance
+- **Key Features**: Restricted access, manual configuration, security balance
 
 ## 🚀 Getting Started
 
 ### View the Diagrams
 1. Open `index.html` in any modern web browser
 2. Use the navigation section to explore different connection patterns
-3. Each diagram includes detailed explanations and key points
+3. Each diagram includes brief explanations and key points
 
 ### Features
 - **Interactive Navigation**: Click any section to view specific diagrams
-- **Mobile Responsive**: Optimized for desktop, tablet, and mobile devices
-- **Fixed Header**: Consistent navigation throughout the experience
-- **Smooth Transitions**: Elegant animations between sections
+- **Mobile Responsive**: Optimised for desktop, tablet, and mobile devices
 
 ## 🔧 Technical Details
 
@@ -59,25 +57,27 @@ This project provides interactive diagrams and explanations of various MCP (Mode
 #### Network Transport
 - **Discovery**: Optional network-based discovery mechanisms
 - **Access**: External AI agent connectivity
-- **Deployment**: Docker container support
+- **Deployment**: Docker container
 - **Use Cases**: Distributed systems, multi-agent environments
 
 ### Security Considerations
 
 #### Endpoint Detection and Response (EDR)
-- Tuned rules for MCP server process visibility
+- Tuned EDR rules for MCP server process visibility
 - Enhanced monitoring and control capabilities
 - Real-time threat detection and response
+- Check out [MCPSpy](https://github.com/DarkChariot/mcpspy)
 
 #### API Security
 - Authentication mechanisms for external API access
 - Advanced API security for external resource interactions
 - Best practices for secure MCP server deployment
+- Check out [LiteLLM MCP Gateway](https://docs.litellm.ai/docs/mcp)
 
 ## 📁 Project Structure
 
 ```
-local-map-servers/
+local-mcp-servers/
 ├── index.html                          # Main interactive web page
 ├── README.md                           # This file
 ├── mcp-stdio-external-resource.svg     # Basic stdio diagram
@@ -89,9 +89,9 @@ local-map-servers/
 ## 🎨 Design Features
 
 - **Modern UI**: Glassmorphism effects and smooth animations
-- **Responsive Design**: Works perfectly on all device sizes
+- **Responsive Design**: Works on various device sizes
 - **Accessibility**: Semantic HTML and keyboard navigation
-- **Performance**: Optimized SVG loading and rendering
+- **Performance**: Optimised SVG loading and rendering
 
 ## 🔗 Related Resources
 
