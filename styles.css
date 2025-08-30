@@ -1,0 +1,449 @@
+/* PwC-Inspired Color Theme */
+:root {
+    /* PwC Primary Colors */
+    --pwc-primary-blue: #0066cc;
+    --pwc-dark-blue: #004499;
+    --pwc-light-blue: #e6f3ff;
+    --pwc-accent-blue: #0099ff;
+    
+    /* PwC Secondary Colors */
+    --pwc-gray-dark: #333333;
+    --pwc-gray-medium: #666666;
+    --pwc-gray-light: #f5f5f5;
+    --pwc-gray-border: #e0e0e0;
+    
+    /* PwC Background Colors */
+    --pwc-white: #ffffff;
+    --pwc-off-white: #fafafa;
+    --pwc-background: #f8f9fa;
+    
+    /* PwC Text Colors */
+    --pwc-text-primary: #333333;
+    --pwc-text-secondary: #666666;
+    --pwc-text-light: #999999;
+    
+    /* PwC Accent Colors */
+    --pwc-success: #28a745;
+    --pwc-warning: #ffc107;
+    --pwc-error: #dc3545;
+    --pwc-info: #17a2b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--pwc-text-primary);
+    background: linear-gradient(135deg, var(--pwc-primary-blue) 0%, var(--pwc-dark-blue) 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 80px; /* Space for fixed header */
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    text-align: center;
+    background: var(--pwc-white);
+    padding: 15px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid var(--pwc-primary-blue);
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    color: var(--pwc-primary-blue);
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.header p {
+    font-size: 0.9rem;
+    color: var(--pwc-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.3;
+}
+
+/* Navigation Section */
+.navigation-section {
+    background: var(--pwc-white);
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--pwc-gray-border);
+}
+
+.nav-header {
+    background: linear-gradient(135deg, var(--pwc-primary-blue), var(--pwc-accent-blue));
+    color: var(--pwc-white);
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.nav-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.nav-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.nav-links {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: var(--pwc-off-white);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--pwc-text-primary);
+    border: 2px solid var(--pwc-gray-border);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nav-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--pwc-primary-blue);
+    background: var(--pwc-light-blue);
+}
+
+.nav-icon {
+    font-size: 2rem;
+    margin-right: 15px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.nav-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-text strong {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    color: var(--pwc-primary-blue);
+    font-weight: 600;
+}
+
+.nav-text small {
+    color: var(--pwc-text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Diagram Sections */
+.diagram-section {
+    display: none;
+    background: var(--pwc-white);
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--pwc-gray-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diagram-section.active {
+    display: block;
+}
+
+.diagram-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.section-header {
+    background: linear-gradient(135deg, var(--pwc-primary-blue), var(--pwc-accent-blue));
+    color: var(--pwc-white);
+    padding: 20px 30px;
+    position: relative;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.section-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.diagram-content {
+    padding: 30px;
+}
+
+.svg-container {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--pwc-background);
+    border-radius: 8px;
+    padding: 20px;
+    border: 2px solid var(--pwc-gray-border);
+}
+
+.svg-container svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.description {
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--pwc-background);
+    border-radius: 8px;
+    border-left: 4px solid var(--pwc-primary-blue);
+}
+
+.description h3 {
+    color: var(--pwc-primary-blue);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.description ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.description li {
+    margin-bottom: 5px;
+    color: var(--pwc-text-secondary);
+}
+
+.key-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.key-point {
+    background: var(--pwc-light-blue);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--pwc-primary-blue);
+}
+
+.key-point h4 {
+    color: var(--pwc-primary-blue);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.key-point p {
+    color: var(--pwc-text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Back to Top */
+.back-to-top {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid var(--pwc-gray-border);
+}
+
+.back-to-top a {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--pwc-primary-blue), var(--pwc-accent-blue));
+    color: var(--pwc-white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+.back-to-top a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+    background: linear-gradient(135deg, var(--pwc-dark-blue), var(--pwc-primary-blue));
+}
+
+.back-to-top a::before {
+    content: "⬆️";
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: var(--pwc-white);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--pwc-gray-border);
+}
+
+.footer p {
+    color: var(--pwc-text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .header {
+        padding: 10px 15px;
+    }
+
+    .header h1 {
+        font-size: 1.4rem;
+        margin: 0 0 3px 0;
+    }
+
+    .header p {
+        font-size: 0.8rem;
+        margin: 0 auto;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .nav-links {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .nav-link {
+        padding: 15px;
+    }
+
+    .nav-icon {
+        font-size: 1.5rem;
+        margin-right: 12px;
+        min-width: 30px;
+    }
+
+    .nav-text strong {
+        font-size: 1rem;
+    }
+
+    .nav-text small {
+        font-size: 0.8rem;
+    }
+
+    .diagram-content {
+        padding: 15px;
+    }
+
+    .svg-container {
+        padding: 10px;
+    }
+
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .section-header p {
+        font-size: 0.9rem;
+    }
+
+    .key-points {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .key-point {
+        padding: 12px;
+    }
+
+    .key-point h4 {
+        font-size: 1rem;
+    }
+
+    .key-point p {
+        font-size: 0.9rem;
+    }
+
+    .description h3 {
+        font-size: 1.1rem;
+    }
+
+    .description p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+
+    .header {
+        padding: 8px 10px;
+    }
+
+    .header h1 {
+        font-size: 1.2rem;
+    }
+
+    .header p {
+        font-size: 0.7rem;
+    }
+
+    .nav-links {
+        padding: 15px;
+    }
+
+    .nav-link {
+        padding: 12px;
+    }
+
+    .nav-icon {
+        font-size: 1.3rem;
+        margin-right: 10px;
+        min-width: 25px;
+    }
+
+    .nav-text strong {
+        font-size: 0.9rem;
+    }
+
+    .nav-text small {
+        font-size: 0.7rem;
+    }
+}
