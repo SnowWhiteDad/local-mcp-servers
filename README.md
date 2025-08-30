@@ -97,7 +97,7 @@ local-mcp-servers/
 
 - [Model Context Protocol (MCP) Documentation](https://modelcontextprotocol.io/)
 - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Security Best Practices](https://modelcontextprotocol.io/docs/security)
+- [MCP Security Best Practices]([https://modelcontextprotocol.io/docs/security](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices))
 
 ## 📄 License
 
