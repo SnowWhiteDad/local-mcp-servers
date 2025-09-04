@@ -113,4 +113,4 @@ If you have any questions or need assistance, please open an issue in this repos
 
 ---
 
-**Note**: This project provides educational and reference material for understanding MCP connection patterns. Always follow security best practices when implementing MCP servers in production environments.
+**Note**: This project provides educational and reference material for understanding local MCP connection patterns. Always follow security best practices when implementing local MCP servers in production environments.
