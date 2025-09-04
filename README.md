@@ -16,22 +16,22 @@ This project provides illustrations of various local MCP (Model Context Protocol
 ### 1. MCP Stdio External Resources Only
 - **File**: `mcp-stdio-external-resource.svg`
 - **Description**: Basic stdio communication flow with external resource access for MCP server processes
-- **Key Features**: Process isolation, no network ports, maximum security
+- **Key Highlights**: Process isolation, no network ports, maximum security
 
 ### 2. MCP Stdio - Internal and External Resources
 - **File**: `mcp-stdio-external-resource-withsec.svg`
 - **Description**: Endpoint security considerations for stdio-based MCP communication
-- **Key Features**: Enhanced EDR, authentication layers, API security
+- **Key Highlights**: Enhanced EDR, authentication layers, API security
 
 ### 3. Discoverable MCP with External Resources
 - **File**: `MCP-External-resource-discoverable.svg`
 - **Description**: Network-discoverable docker-based MCP servers with HTTP transport
-- **Key Features**: Network discovery, external AI agent access, resource sharing
+- **Key Highlights**: Network discovery, external AI agent access, resource sharing
 
 ### 4. Docker MCP - Non-Discoverable
 - **File**: `MCP-External-resource-non-discoverable.svg`
 - **Description**: Docker-based MCP servers with restricted network access
-- **Key Features**: Restricted access, manual configuration, security balance
+- **Key Highlights**: Restricted access, manual configuration, security balance
 
 ## 🚀 Getting Started
 
