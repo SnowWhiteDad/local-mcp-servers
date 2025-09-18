@@ -3,205 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Model Context Protocol (MCP) connection flow diagrams showing communication patterns and external resource access for local MCP servers">
+    <meta name="keywords" content="MCP, Model Context Protocol, connection flow, diagrams, local servers, stdio, docker, security">
+    <meta name="author" content="SnowWhiteDad">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Local MCP - Connection Flow Diagrams">
+    <meta property="og:description" content="Understanding communication patterns and external resource access for local MCP servers">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/SnowWhiteDad/local-mcp-servers">
+    <meta property="og:site_name" content="Local MCP">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Local MCP - Connection Flow Diagrams">
+    <meta name="twitter:description" content="Understanding communication patterns and external resource access for local MCP servers">
+    
     <title>Local MCP - Connection Flow Diagrams</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <div class="container">
-        <div class="header">
+        <header class="header">
             <h1>Local MCP</h1>
             <p>Model Context Protocol (MCP) Connection Flow Diagrams</p>
             <p>Understanding communication patterns and external resource access for local MCP servers</p>
-            <p style="font-size: 14px;">SnowWhiteDad - 2025 </p>
-        </div>
+        </header>
 
-        <div class="navigation-section" id="top">
+        <nav class="navigation-section" id="top" aria-label="Main navigation">
             <div class="nav-header">
                 <h2>Quick Navigation</h2>
                 <p>Jump to any section below</p>
             </div>
             <div class="nav-links">
-                <a href="#stdio-basic" class="nav-link">
-                    <span class="nav-icon">🔗</span>
+                <a href="#stdio-basic" class="nav-link" aria-describedby="stdio-basic-desc">
+                    <span class="nav-icon" aria-hidden="true">🔗</span>
                     <span class="nav-text">
                         <strong>MCP Stdio External Resources only</strong>
-                        <small>Basic stdio communication flow with external resource access</small>
+                        <small id="stdio-basic-desc">Basic stdio communication flow with external resource access</small>
                     </span>
                 </a>
-                <a href="#stdio-security" class="nav-link">
-                    <span class="nav-icon">🔒</span>
+                <a href="#stdio-security" class="nav-link" aria-describedby="stdio-security-desc">
+                    <span class="nav-icon" aria-hidden="true">🔒</span>
                     <span class="nav-text">
                         <strong>MCP Stdio with Endpoint Security</strong>
-                        <small>Security considerations enhanced EDR</small>
+                        <small id="stdio-security-desc">Security considerations enhanced EDR</small>
                     </span>
                 </a>
-                <a href="#external-discoverable" class="nav-link">
-                    <span class="nav-icon">🌐</span>
+                <a href="#external-discoverable" class="nav-link" aria-describedby="external-discoverable-desc">
+                    <span class="nav-icon" aria-hidden="true">🌐</span>
                     <span class="nav-text">
                         <strong>Docker MCP - Discoverable</strong>
-                        <small>Network discoverable docker MCP server</small>
+                        <small id="external-discoverable-desc">Network discoverable docker MCP server</small>
                     </span>
                 </a>
-                <a href="#external-non-discoverable" class="nav-link">
-                    <span class="nav-icon">🔐</span>
+                <a href="#external-non-discoverable" class="nav-link" aria-describedby="external-non-discoverable-desc">
+                    <span class="nav-icon" aria-hidden="true">🔐</span>
                     <span class="nav-text">
                         <strong>Docker MCP - Non-Discoverable</strong>
-                        <small>Disabled inbound access from the network</small>
+                        <small id="external-non-discoverable-desc">Disabled inbound access from the network</small>
                     </span>
                 </a>
             </div>
-        </div>
+        </nav>
 
-        <div class="diagram-section" id="stdio-basic">
-            <div class="section-header">
-                <h2>MCP Stdio External Resources only</h2>
-                <p>Basic stdio communication flow with external resource access for the MCP server processes.</p>
-            </div>
-            <div class="diagram-content">
-                <div class="svg-container">
-                    <object data="mcp-stdio-external-resource.svg" type="image/svg+xml" width="100%">
-                        <img src="mcp-stdio-external-resource.svg" alt="MCP Stdio External Resources only Diagram" style="width: 100%; height: auto;">
-                    </object>
-                </div>
-                <div class="description">
-                    <h3>Overview</h3>
-                    <p>This diagram illustrates the basic stdio-based communication pattern between an AI agent and MCP servers, showing how local MCP servers can access external resources while maintaining process isolation.</p>
-                    
-                    <div class="key-points">
-                        <div class="key-point">
-                            <h4>Local Communication</h4>
-                            <p>AI agent communicates with MCP servers via stdio (stdin/stdout) for maximum security and process isolation.</p>
-                        </div>
-                        <div class="key-point">
-                            <h4>External Access</h4>
-                            <p>MCP servers can make API calls to external services while the stdio transport remains local-only.</p>
-                        </div>
-                        <div class="key-point">
-                            <h4>Security Model</h4>
-                            <p>No network ports or sockets involved - pure process-to-process communication for enhanced security.</p>
+        <main id="main-content">
+            <section class="diagram-section" id="stdio-basic" aria-labelledby="stdio-basic-title">
+                <header class="section-header">
+                    <h2 id="stdio-basic-title">MCP Stdio External Resources only</h2>
+                    <p>Basic stdio communication flow with external resource access for the MCP server processes.</p>
+                </header>
+                <article class="diagram-content">
+                    <figure class="svg-container">
+                        <object data="mcp-stdio-external-resource.svg" type="image/svg+xml" aria-label="MCP Stdio External Resources flow diagram">
+                            <img src="mcp-stdio-external-resource.svg" alt="MCP Stdio External Resources only Diagram showing basic stdio communication flow between AI agent and MCP servers with external resource access" width="800" height="600" loading="lazy">
+                        </object>
+                    </figure>
+                    <div class="description">
+                        <h3>Overview</h3>
+                        <p>This diagram illustrates the basic stdio-based communication pattern between an AI agent and MCP servers, showing how local MCP servers can access external resources while maintaining process isolation.</p>
+                        
+                        <div class="key-points">
+                            <div class="key-point">
+                                <h4>Local Communication</h4>
+                                <p>AI agent communicates with MCP servers via stdio (stdin/stdout) for maximum security and process isolation.</p>
+                            </div>
+                            <div class="key-point">
+                                <h4>External Access</h4>
+                                <p>MCP servers can make API calls to external services while the stdio transport remains local-only.</p>
+                            </div>
+                            <div class="key-point">
+                                <h4>Security Model</h4>
+                                <p>No network ports or sockets involved - pure process-to-process communication for enhanced security.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="back-to-top">
-                    <a href="#top">Back to Navigation</a>
-                </div>
-            </div>
-        </div>
+                    <div class="back-to-top">
+                        <a href="#top" aria-label="Back to navigation section">Back to Navigation</a>
+                    </div>
+                </article>
+            </section>
 
-        <div class="diagram-section" id="stdio-security">
-            <div class="section-header">
-                <h2>MCP Stdio - Internal and External Resources</h2>
-                <p>Endpoint security considerations for stdio-based MCP communication and local MCP server access and processes.</p>
-            </div>
-            <div class="diagram-content">
-                <div class="svg-container">
-                    <object data="mcp-stdio-external-resource-withsec.svg" type="image/svg+xml" width="100%">
-                        <img src="mcp-stdio-external-resource-withsec.svg" alt="Internal and External Resources Diagram" style="width: 100%; height: auto;">
-                    </object>
-                </div>
-                <div class="description">
-                    <h3>Security-Focused Architecture</h3>
-                    <p>This diagram shows additional security considerations when using stdio transport with internal and external resource access.</p>
-                    
-                    <div class="key-points">
-                        <div class="key-point">
-                            <h4>Enhanced EDR</h4>
-                            <p>Tuned Endpoint Detection and Response (EDR) rules for enhanced visibility and control of MCP server processes.</p>
-                        </div>
-                        <div class="key-point">
-                            <h4>Secure Communication</h4>
-                            <p>Maintains the security benefits of stdio while ensuring necessary security for external interactions.</p>
-                        </div>
-                        <div class="key-point">
-                            <h4>Best Practices</h4>
-                            <p>Require additional measures for MCP server external resource access including authentication and Advanced API Security for external API access.</p>
+            <section class="diagram-section" id="stdio-security" aria-labelledby="stdio-security-title">
+                <header class="section-header">
+                    <h2 id="stdio-security-title">MCP Stdio - Internal and External Resources</h2>
+                    <p>Endpoint security considerations for stdio-based MCP communication and local MCP server access and processes.</p>
+                </header>
+                <article class="diagram-content">
+                    <figure class="svg-container">
+                        <object data="mcp-stdio-external-resource-withsec.svg" type="image/svg+xml" aria-label="MCP Stdio with security considerations flow diagram">
+                            <img src="mcp-stdio-external-resource-withsec.svg" alt="Internal and External Resources Diagram showing security-focused stdio communication with enhanced EDR monitoring" width="800" height="600" loading="lazy">
+                        </object>
+                    </figure>
+                    <div class="description">
+                        <h3>Security-Focused Architecture</h3>
+                        <p>This diagram shows additional security considerations when using stdio transport with internal and external resource access.</p>
+                        
+                        <div class="key-points">
+                            <div class="key-point">
+                                <h4>Enhanced EDR</h4>
+                                <p>Tuned Endpoint Detection and Response (EDR) rules for enhanced visibility and control of MCP server processes.</p>
+                            </div>
+                            <div class="key-point">
+                                <h4>Secure Communication</h4>
+                                <p>Maintains the security benefits of stdio while ensuring necessary security for external interactions.</p>
+                            </div>
+                            <div class="key-point">
+                                <h4>Best Practices</h4>
+                                <p>Require additional measures for MCP server external resource access including authentication and Advanced API Security for external API access.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="back-to-top">
-                    <a href="#top">Back to Navigation</a>
-                </div>
-            </div>
-        </div>
+                    <div class="back-to-top">
+                        <a href="#top" aria-label="Back to navigation section">Back to Navigation</a>
+                    </div>
+                </article>
+            </section>
 
-        <div class="diagram-section" id="external-discoverable">
-            <div class="section-header">
-                <h2>Discoverable MCP with External Resources</h2>
-                <p>Network-discoverable docker-based MCP servers with http transport and external resource access. The MCP servers can receive requests over the network from external AI agents.</p>
-            </div>
-            <div class="diagram-content">
-                <div class="svg-container">
-                    <object data="MCP-External-resource-discoverable.svg" type="image/svg+xml" width="100%">
-                        <img src="MCP-External-resource-discoverable.svg" alt="MCP External Resource Discoverable Diagram" style="width: 100%; height: auto;">
-                    </object>
-                </div>
-                <div class="description">
-                    <h3>Network-Based Discovery</h3>
-                    <p>This diagram shows how MCP servers can be discoverable over the network, enabling external access and resource discovery.</p>
-                    
-                    <div class="key-points">
-                        <div class="key-point">
-                            <h4>Network Discovery</h4>
-                            <p>MCP servers can be discovered and accessed over network protocols.</p>
-                        </div>
-                        <div class="key-point">
-                            <h4>External Access</h4>
-                            <p>Enables external AI agents to discover and connect to MCP servers.</p>
-                        </div>
-                        <div class="key-point">
-                            <h4>Resource Sharing</h4>
-                            <p>Facilitates sharing of MCP resources across different systems and networks.</p>
+            <section class="diagram-section" id="external-discoverable" aria-labelledby="external-discoverable-title">
+                <header class="section-header">
+                    <h2 id="external-discoverable-title">Discoverable MCP with External Resources</h2>
+                    <p>Network-discoverable docker-based MCP servers with http transport and external resource access. The MCP servers can receive requests over the network from external AI agents.</p>
+                </header>
+                <article class="diagram-content">
+                    <figure class="svg-container">
+                        <object data="MCP-External-resource-discoverable.svg" type="image/svg+xml" aria-label="Discoverable MCP external resources flow diagram">
+                            <img src="MCP-External-resource-discoverable.svg" alt="MCP External Resource Discoverable Diagram showing network-discoverable docker MCP servers with external resource access" width="800" height="600" loading="lazy">
+                        </object>
+                    </figure>
+                    <div class="description">
+                        <h3>Network-Based Discovery</h3>
+                        <p>This diagram shows how MCP servers can be discoverable over the network, enabling external access and resource discovery.</p>
+                        
+                        <div class="key-points">
+                            <div class="key-point">
+                                <h4>Network Discovery</h4>
+                                <p>MCP servers can be discovered and accessed over network protocols.</p>
+                            </div>
+                            <div class="key-point">
+                                <h4>External Access</h4>
+                                <p>Enables external AI agents to discover and connect to MCP servers.</p>
+                            </div>
+                            <div class="key-point">
+                                <h4>Resource Sharing</h4>
+                                <p>Facilitates sharing of MCP resources across different systems and networks.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="back-to-top">
-                    <a href="#top">Back to Navigation</a>
-                </div>
-            </div>
-        </div>
+                    <div class="back-to-top">
+                        <a href="#top" aria-label="Back to navigation section">Back to Navigation</a>
+                    </div>
+                </article>
+            </section>
 
-        <div class="diagram-section" id="external-non-discoverable">
-            <div class="section-header">
-                <h2>Docker MCP - Non-Discoverable</h2>
-                <p>Docker-based MCP servers with access to external resources but not discoverable by remote AI agents.</p>
-            </div>
-            <div class="diagram-content">
-                <div class="svg-container">
-                    <object data="MCP-External-resource-non-discoverable.svg" type="image/svg+xml" width="100%">
-                        <img src="MCP-External-resource-non-discoverable.svg" alt="MCP External Resource Non-Discoverable Diagram" style="width: 100%; height: auto;">
-                    </object>
-                </div>
-                <div class="description">
-                    <h3>Restricted Network Access</h3>
-                    <p>This diagram illustrates MCP servers that have access to remote resources over the network but not automatically discoverable for external AI agents, providing restricted access patterns.</p>
-                    
-                    <div class="key-points">
-                        <div class="key-point">
-                            <h4>Controlled Access</h4>
-                            <p>MCP servers are accessible but not automatically discoverable on the network.</p>
-                        </div>
-                        <div class="key-point">
-                            <h4>Manual Configuration</h4>
-                            <p>Requires explicit configuration and connection setup for external access.</p>
-                        </div>
-                        <div class="key-point">
-                            <h4>Security Balance</h4>
-                            <p>Provides network access while maintaining control over who can discover and connect.</p>
+            <section class="diagram-section" id="external-non-discoverable" aria-labelledby="external-non-discoverable-title">
+                <header class="section-header">
+                    <h2 id="external-non-discoverable-title">Docker MCP - Non-Discoverable</h2>
+                    <p>Docker-based MCP servers with access to external resources but not discoverable by remote AI agents.</p>
+                </header>
+                <article class="diagram-content">
+                    <figure class="svg-container">
+                        <object data="MCP-External-resource-non-discoverable.svg" type="image/svg+xml" aria-label="Non-discoverable MCP external resources flow diagram">
+                            <img src="MCP-External-resource-non-discoverable.svg" alt="MCP External Resource Non-Discoverable Diagram showing docker MCP servers with external resources but restricted network access" width="800" height="600" loading="lazy">
+                        </object>
+                    </figure>
+                    <div class="description">
+                        <h3>Restricted Network Access</h3>
+                        <p>This diagram illustrates MCP servers that have access to remote resources over the network but not automatically discoverable for external AI agents, providing restricted access patterns.</p>
+                        
+                        <div class="key-points">
+                            <div class="key-point">
+                                <h4>Controlled Access</h4>
+                                <p>MCP servers are accessible but not automatically discoverable on the network.</p>
+                            </div>
+                            <div class="key-point">
+                                <h4>Manual Configuration</h4>
+                                <p>Requires explicit configuration and connection setup for external access.</p>
+                            </div>
+                            <div class="key-point">
+                                <h4>Security Balance</h4>
+                                <p>Provides network access while maintaining control over who can discover and connect.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="back-to-top">
-                    <a href="#top">Back to Navigation</a>
-                </div>
-            </div>
-        </div>
+                    <div class="back-to-top">
+                        <a href="#top" aria-label="Back to navigation section">Back to Navigation</a>
+                    </div>
+                </article>
+            </section>
+        </main>
 
-        <div class="footer">
+        <footer class="footer">
             <p>MCP (Model Context Protocol) Connection Flow Diagrams</p>
             <p>Understanding the different communication patterns and security models for local MCP implementations</p>
-        </div>
+        </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
